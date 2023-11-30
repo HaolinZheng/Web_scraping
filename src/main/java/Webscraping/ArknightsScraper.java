@@ -202,7 +202,7 @@ public class ArknightsScraper {
      * Metodo para crear el CSV
      */
     private void crearCSV() {
-        try (CSVWriter writer = new CSVWriter(new FileWriter("ArknightsScraper.csv"))) {
+        try (CSVWriter writer = new CSVWriter(new FileWriter("ArknightsScraperOperator.csv"))) {
             for (Operator op : operators) {
                 String[] operator = {
                         op.getName(),
@@ -213,8 +213,15 @@ public class ArknightsScraper {
                         op.getClase().getSecondary(),
                 };
                 writer.writeNext(operator);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try (CSVWriter writer = new CSVWriter(new FileWriter("ArknightsScraperSkills.csv"))) {
+            for (Operator op : operators) {
                 for (Skill skill : op.getSkill()) {
                     String[] skills = {
+                            op.getName(),
                             skill.getName(),
                             skill.getCharge(),
                             skill.getDuration(),
