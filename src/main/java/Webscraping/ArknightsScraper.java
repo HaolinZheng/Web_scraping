@@ -203,6 +203,8 @@ public class ArknightsScraper {
      */
     private void crearCSV() {
         try (CSVWriter writer = new CSVWriter(new FileWriter("ArknightsScraperOperator.csv"))) {
+            String[] info = {"Name", "Position", "Attact_Type", "Alter", "Class_Primary", "Class_Secondary"};
+            writer.writeNext(info);
             for (Operator op : operators) {
                 String[] operator = {
                         op.getName(),
@@ -218,6 +220,8 @@ public class ArknightsScraper {
             throw new RuntimeException(e);
         }
         try (CSVWriter writer = new CSVWriter(new FileWriter("ArknightsScraperSkills.csv"))) {
+            String[] info = {"Name", "Skill_Name", "Charge", "Duration", "Total_Cost", "Initial_Cost", "Auto"};
+            writer.writeNext(info);
             for (Operator op : operators) {
                 for (Skill skill : op.getSkill()) {
                     String[] skills = {

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <operators>
     <operator>
+        <Name>Friston-3</Name>
+        <Position>Melee</Position>
+        <Attack>Physical Damage</Attack>
+        <Alter>false</Alter>
+        <Skills/>
+        <Classes/>
+        <Class>
+            <Primary>Defender</Primary>
+            <Secondary>Normal / Protector</Secondary>
+        </Class>
+    </operator>
+    <operator>
         <Name>Muelsyse</Name>
         <Position>Ranged</Position>
         <Attack>Physical Damage</Attack>
